@@ -6,7 +6,7 @@ This repository contains the implementation code for motion capture-based roboti
 
 ## Prerequisites
 
-### 1. `MEMD_opt_Punch.py`
+### 1. `MEMD_opt.py`
 - **Python 3.x** environment
 - Required Python packages:
   - `numpy`
@@ -26,14 +26,14 @@ This repository contains the implementation code for motion capture-based roboti
 ├── utils/                    # Utility scripts for MEMD and other processes
 ├── .gitignore                # Git ignore file
 ├── LICENSE                   # License for the project
-├── MEMD_opt_Punch.py         # Script for MEMD motion data processing
+├── MEMD_opt.py               # Script for MEMD motion data processing
 ├── README.md                 # Project documentation
 └── apply_motion_NAO.py       # Script for applying motion to NAO robot/simulator
 ```
 
 ## Usage
 
-### 1. MEMD_opt_Punch.py
+### 1. MEMD_opt.py
 
 This script processes motion data using MEMD and compares the results with the Fourier Transform (FT). It also optimizes the output using a custom algorithm. The script is designed to work with motion data that has already been converted for use with the NAO robot. The example provided uses "punch" motion data.
 
@@ -45,7 +45,7 @@ This script processes motion data using MEMD and compares the results with the F
 #### Example
 
 ```bash
-python MEMD_opt_Punch.py --output_csv "./CSVdata/punch.csv" --output_opt "./punch"
+python MEMD_opt.py --output_csv "./CSVdata/punch.csv" --output_opt "./punch"
 ```
 
 ### 2. apply_motion_NAO.py
