@@ -12,7 +12,7 @@ from utils.MEMD_all import memd
 from utils.MEMD_all import avgF, avgA
 import utils.ht as hs
 import matplotlib.pyplot as plt
-
+import argparse
 from scipy.fftpack import fft
 from scipy.fftpack import ifft
 
@@ -26,8 +26,15 @@ def min_max(x, axis=None):
     return result
 
 
-output_csv = "./CSVdata/punch.csv"
+# Set up argument parser
+parser = argparse.ArgumentParser(description='Process MEMD options.')
+parser.add_argument('--input_csv', type=str, required=True, help='Path to the input CSV file')
+parser.add_argument('--output_opt', type=str, required=True, help='Path to the output directory')
 
+args = parser.parse_args()
+
+output_csv = args.input_csv
+output_opt = args.output_opt
 
 ####################################################################################################
  
@@ -738,7 +745,7 @@ listout.append(l[0])
 for i in range(out.shape[0]):
     listout.append([t[i] * slow + 3] + list(out[i]))
 
-with open('./punch/out_org.csv', 'w') as f:
+with open(output_opt + '/out_org.csv', 'w') as f:
     writer = csv.writer(f)
     writer.writerows(listout)
 
@@ -756,7 +763,7 @@ listout.append(l[0])
 for i in range(out.shape[0]):
     listout.append([t[i] * slow + 3] + list(out[i]))
 
-with open('./punch/out_hhtAgr.csv', 'w') as f:
+with open(output_opt + '/out_hhtAgr.csv', 'w') as f:
     writer = csv.writer(f)
     writer.writerows(listout)
     
@@ -776,7 +783,6 @@ listout.append(l[0])
 for i in range(out.shape[0]):
     listout.append([t[i] * slow + 3] + list(out[i]))
 
-with open('./punch/out_hhtFT.csv', 'w') as f:
+with open(output_opt + '/out_hhtFT.csv', 'w') as f:
     writer = csv.writer(f)
     writer.writerows(listout)
-    
