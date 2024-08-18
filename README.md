@@ -78,6 +78,7 @@ python apply_motionSim.py --ip "nao.lan" --motionpath "./punch/" --datapath "out
 - **Python 2.7** is required to run `apply_motionSim.py`.
 - Ensure that the NAOqi SDK is properly installed and configured.
 - If using a simulator, make sure Choregraphe software is installed, and a NAO 6 simulator is running with the correct port number.
+- The --port 59477 is just an example. Each time you start the NAO virtual robot in Choregraphe, the port number may change. You can confirm the correct port number in Choregraphe by checking the connection details when the virtual robot is running.
 
 ## Article Reference
 
