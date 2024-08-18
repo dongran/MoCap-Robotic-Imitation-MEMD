@@ -13,7 +13,7 @@ This repository contains the implementation code for motion capture-based roboti
   - `scipy`
   - `matplotlib`
   
-### 2. `apply_motionSim.py`
+### 2. `apply_motion_NAO.py`
 - **Python 2.7** environment
 - NAOqi SDK (download from [Aldebaran NAO 6 Support](https://www.aldebaran.com/en/support/nao-6/downloads-softwares))
 - Choregraphe software for NAO 6 robot simulation (required if no physical robot is available)
@@ -28,7 +28,7 @@ This repository contains the implementation code for motion capture-based roboti
 ├── LICENSE                   # License for the project
 ├── MEMD_opt_Punch.py         # Script for MEMD motion data processing
 ├── README.md                 # Project documentation
-└── apply_motionSim.py        # Script for applying motion to NAO robot/simulator
+└── apply_motion_NAO.py       # Script for applying motion to NAO robot/simulator
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ This script processes motion data using MEMD and compares the results with the F
 python MEMD_opt_Punch.py --output_csv "./CSVdata/punch.csv" --output_opt "./punch"
 ```
 
-### 2. apply_motionSim.py
+### 2. apply_motion_NAO.py
 
 After generating optimized CSV data, this script is used to apply the data to a NAO robot or simulator. This script runs in a Python 2.7 environment and requires the NAOqi SDK and Choregraphe software (if using a simulator). You need to specify the path to the data and the robot IP address.
 
@@ -64,20 +64,20 @@ After generating optimized CSV data, this script is used to apply the data to a 
 **For the Simulator:**
 
 ```bash
-python apply_motionSim.py --ip "localhost" --port 59477 --motionpath "./punch/" --datapath "out_hhtAgr.csv"
+python apply_motion_NAO.py --ip "localhost" --port [port number] --motionpath "./punch/" --datapath "out_hhtAgr.csv"
 ```
 
 **For the Real Robot:**
 
 ```bash
-python apply_motionSim.py --ip "nao.lan" --motionpath "./punch/" --datapath "out_hhtAgr.csv"
+python apply_motion_NAO.py --ip "nao.lan" --motionpath "./punch/" --datapath "out_hhtAgr.csv"
 ```
 
-
 ### Important Notes:
-- **Python 2.7** is required to run `apply_motionSim.py`.
+- **Python 2.7** is required to run `apply_motion_NAO.py`.
 - Ensure that the NAOqi SDK is properly installed and configured.
 - If using a simulator, make sure Choregraphe software is installed, and a NAO 6 simulator is running with the correct port number.
+- The --port [port number] should be replaced with the actual port number displayed in Choregraphe when the NAO virtual robot is running. This port number may change each time you start the simulator.
 
 ## Article Reference
 
