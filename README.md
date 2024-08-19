@@ -41,11 +41,14 @@ This script processes motion data using MEMD and compares the results with the F
 
 - `--output_csv`: Path to the input CSV file containing the motion data.
 - `--output_opt`: Path to the output directory where results will be saved.
+- `--slow`: A parameter to control the speed reduction of the motion. A value of `1.0` indicates normal speed, while a value of `2.0` indicates the speed is reduced by half (slower).
+- `--alpha`: The alpha parameter as described in the research paper, which is used in the optimization process.
+
 
 #### Example
 
 ```bash
-python MEMD_opt.py --output_csv "./CSVdata/punch.csv" --output_opt "./punch"
+python MEMD_opt_Punch.py --input_csv CSVdata/punch.csv --output_opt punch --slow 1.0 --alpha 0.5
 ```
 
 ### 2. apply_motion_NAO.py
