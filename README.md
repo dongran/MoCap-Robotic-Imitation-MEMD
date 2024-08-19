@@ -48,8 +48,18 @@ This script processes motion data using MEMD and compares the results with the F
 #### Example
 
 ```bash
-python MEMD_opt_Punch.py --input_csv CSVdata/punch.csv --output_opt punch --slow 1.0 --alpha 0.5
+python MEMD_opt_NAO.py --input_csv CSVdata/punch.csv --output_opt punch --slow 1.0 --alpha 0.5
 ```
+
+## Output Files
+
+After running `MEMD_opt_NAO.py`, three CSV files will be generated in the output directory:
+
+1. **out_org.csv**: This file contains the original robot motor data after conversion, without any processing. It represents the unaltered motion data.
+2. **out_hhtFT.csv**: This file contains the denoised motion data based on Fourier Transform. It represents the motion data after applying traditional Fourier-based denoising.
+3. **out_hhtAgr.csv**: This file contains the processed motion data using our proposed method as described in the paper. This represents the optimized motion data according to the algorithm introduced in our research.
+
+These files are generated in the specified output directory after running the script, and they can be used for further analysis or for applying the processed motion data to the NAO robot.
 
 ### 2. apply_motion_NAO.py
 
@@ -82,11 +92,16 @@ python apply_motion_NAO.py --ip "nao.lan" --motionpath "./punch/" --datapath "ou
 - If using a simulator, make sure Choregraphe software is installed, and a NAO 6 simulator is running with the correct port number.
 - The --port [port number] should be replaced with the actual port number displayed in Choregraphe when the NAO virtual robot is running. This port number may change each time you start the simulator.
 
+
+## Demonstration
+
+Here is a demonstration of the motion processing using the "punch" example. The video shows the replay of the processed motion data on the NAO robot in the simulator after executing the script.
+
+![Demo of Motion](assets/punch_example_sim.gif)
+
 ## Article Reference
 
 This repository is based on the research paper:
-
-**Ran Dong, Qiong Chang, Meng Joo Er, Junpei Zhong, and Soichiro Ikuno,** "Motion Capture-based Robotic Imitation: A Keyframeless Implementation Method using Multivariate Empirical Mode Decomposition," ASME 2024. [Link to paper]
 
 ```bibtex
 @article{dong2024motion,
