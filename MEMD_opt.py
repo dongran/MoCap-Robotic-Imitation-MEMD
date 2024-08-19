@@ -30,11 +30,17 @@ def min_max(x, axis=None):
 parser = argparse.ArgumentParser(description='Process MEMD options.')
 parser.add_argument('--input_csv', type=str, required=True, help='Path to the input CSV file')
 parser.add_argument('--output_opt', type=str, required=True, help='Path to the output directory')
+parser.add_argument('--slow', type=float, default=1.0, help='Slow parameter (default: 1.0)')
+parser.add_argument('--alpha', type=float, default=0.5, help='Alpha parameter (default: 0.5)')
 
 args = parser.parse_args()
 
 output_csv = args.input_csv
 output_opt = args.output_opt
+
+
+slow = args.slow
+alpha = args.alpha
 
 ####################################################################################################
  
@@ -156,9 +162,8 @@ ax = plt.gca()
 ax.set_facecolor([0.0,0.0,0.5])
 plt.ylim(0, 50)
 plt.xlim(0, t[-1])
-#plt.title(date[st] + " -- " + date[ed - 1])    #タイトルを付ける
-plt.xlabel('Time [sec]')        #x軸に名前をつける
-plt.ylabel('Frequency [Hz]', labelpad=20) #y軸に名前をつける
+plt.xlabel('Time [sec]')
+plt.ylabel('Frequency [Hz]', labelpad=20) 
 plt.colorbar(label = "Amplitude [deg] (log scale)")
 plt.show()
 
@@ -198,9 +203,9 @@ ax.set_facecolor([0.0,0.0,0.5])
 plt.ylim(0, 20)
 plt.xlim(0, t[-1])
 plt.clim(minv, maxv)
-plt.title("IMF$_{3-5}$")    #タイトルを付ける
-plt.xlabel('Time [$s$]')        #x軸に名前をつける
-plt.ylabel('Frequency [Hz]') #y軸に名前をつける
+plt.title("IMF$_{3-5}$")  
+plt.xlabel('Time [$s$]')       
+plt.ylabel('Frequency [Hz]') 
 plt.colorbar(label = "Amplitude [$deg$] (log scale)")
 #plt.show()
 
@@ -213,9 +218,9 @@ ax.set_facecolor([0.0,0.0,0.5])
 plt.ylim(0, 3)
 plt.xlim(0, t[-1])
 plt.clim(minv, maxv)
-plt.title("IMF$_{6-8}$")    #タイトルを付ける
-plt.xlabel('Time [$s$]')        #x軸に名前をつける
-plt.ylabel('Frequency [Hz]') #y軸に名前をつける
+plt.title("IMF$_{6-8}$")    
+plt.xlabel('Time [$s$]')      
+plt.ylabel('Frequency [Hz]') 
 plt.colorbar(label = "Amplitude [$deg$] (log scale)")
 
 plt.tight_layout()
@@ -712,7 +717,7 @@ plt.show()
 phi = maxspeedFT[:-1]
 sigma = mse[:-1]
 
-alpha = 0.5
+
 beta = 1 - alpha
 
 imfmotorlist = []
@@ -731,7 +736,6 @@ for i in range(imf.shape[1]):
 #An examplem: implimitation
 
 
-slow = 1
 
 
 #Orignal
@@ -786,3 +790,4 @@ for i in range(out.shape[0]):
 with open(output_opt + '/out_hhtFT.csv', 'w') as f:
     writer = csv.writer(f)
     writer.writerows(listout)
+    
