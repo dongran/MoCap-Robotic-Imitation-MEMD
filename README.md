@@ -4,6 +4,10 @@
 
 This repository contains the implementation code for motion capture-based robotic imitation using MEMD (Multivariate Empirical Mode Decomposition). The project allows for the decomposition and application of motion data on NAO robots or simulators.
 
+## Video Demonstration
+
+[![MoCap-Robotic-Imitation-MEMD](https://img.youtube.com/vi/-a0Hz5riBfs/0.jpg)](https://youtu.be/-a0Hz5riBfs)
+
 ## Prerequisites
 
 ### 1. `MEMD_opt.py`
@@ -104,13 +108,14 @@ Here is a demonstration of the motion processing using the "punch" example. The 
 This repository is based on the research paper:
 
 ```bibtex
-@article{dong2024motion,
-  title={Motion Capture-based Robotic Imitation: A Keyframeless Implementation Method using Multivariate Empirical Mode Decomposition},
-  author={Ran Dong and Qiong Chang and Meng Joo Er and Junpei Zhong and Soichiro Ikuno},
-  journal={IEEE/ASME Transactions on Mechatronics},
+@ARTICLE{10652882,
+  author={Dong, Ran and Chang, Qiong and Er, Meng Joo and Zhong, Junpei and Ikuno, Soichiro},
+  journal={IEEE/ASME Transactions on Mechatronics}, 
+  title={Motion Capture-Based Robotic Imitation: A Keyframeless Implementation Method Using Multivariate Empirical Mode Decomposition}, 
   year={2024},
-  note={In Press}
-}
+  pages={1-12},
+  keywords={Biomechanics;deep learning;empirical mode decomposition (EMD);frequency control;motion measurement;robot motion},
+  doi={10.1109/TMECH.2024.3440642}}
 ```
 
 If you use this code or any part of it in your research, please cite the above paper.
