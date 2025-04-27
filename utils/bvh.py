@@ -6,8 +6,8 @@ import numpy as np
 from scipy import interpolate
 
 
-# Quaternion に変換される
-# 親子関係が変わっていなければ，boneの定義の順番はどうでも良い
+# The data is converted to quaternions.
+# Provided that the parent-child relationships are maintained, the order of bone definitions is irrelevant.
 
 class Vector:
     __slots__ = 'x', 'y', 'z', 'order'
@@ -143,14 +143,14 @@ class BVH:
             if line[0] == '}':
                 break
 
-            next(lines)  # { を取り出す
+            next(lines)  # Extract the '{' character
             offset = np.loadtxt(lines, usecols=(1, 2, 3), max_rows=1)
 
             if line[0] == 'End':
                 bone = Bone(offset=offset)
             else:
                 bone = Bone(line[1], offset)
-                next(lines)  # CHANNELS を飛ばす
+                next(lines)  # SKIP CHANNELS
 
             if current_bone:
                 current_bone.append(BVH.parse_bone(lines, bone))
