@@ -52,7 +52,7 @@ This script processes motion data using MEMD and compares the results with the F
 #### Example
 
 ```bash
-python MEMD_opt_NAO.py --input_csv CSVdata/punch.csv --output_opt punch --slow 1.0 --alpha 0.5
+python MEMD_opt.py --input_csv CSVdata/punch.csv --output_opt punch --slow 1.0 --alpha 0.5
 ```
 
 ## Output Files
