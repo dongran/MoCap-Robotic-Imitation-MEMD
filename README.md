@@ -57,7 +57,7 @@ python MEMD_opt_NAO.py --input_csv CSVdata/punch.csv --output_opt punch --slow 1
 
 ## Output Files
 
-After running `MEMD_opt_NAO.py`, three CSV files will be generated in the output directory:
+After running `MEMD_opt.py`, three CSV files will be generated in the output directory:
 
 1. **out_org.csv**: This file contains the original robot motor data after conversion, without any processing. It represents the unaltered motion data.
 2. **out_hhtFT.csv**: This file contains the denoised motion data based on Fourier Transform. It represents the motion data after applying traditional Fourier-based denoising.
