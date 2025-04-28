@@ -129,7 +129,7 @@ def evaluate_imf_performance(imf, data, t, dt):
         sd.append(np.std(tmpdata, axis=1))
         mse.append(np.mean((data.T - tmpdata) ** 2, axis=1))
         
-        # 计算每个电机的最大速度和加速度
+        # Calculate maximum speed and acceleration for each motor
         max_speeds = []
         max_accels = []
         for j in range(tmpdata.shape[0]):
@@ -159,7 +159,7 @@ def evaluate_imf_performance(imf, data, t, dt):
     sd.append(np.std(imf[-1], axis=1))
     mse.append(np.mean((data.T - imf[-1]) ** 2, axis=1))
     
-    # 计算每个电机的最大速度和加速度
+    # Calculate maximum speed and acceleration for each motor
     max_speeds = []
     max_accels = []
     for j in range(imf[-1].shape[0]):
@@ -283,7 +283,7 @@ def perform_fourier_transform_analysis(avgfreq, data, t, dt, nIMFs, sd):
         sdFT.append(np.std(ftdata[i], axis=1))
         mseFT.append(np.mean((data.T - ftdata[i]) ** 2, axis=1))
         
-        # 计算每个电机的最大速度和加速度
+        # Calculate maximum speed and acceleration for each motor
         max_speeds = []
         max_accels = []
         for j in range(tmpdata.shape[0]):
