@@ -112,9 +112,11 @@ This repository is based on the research paper:
   author={Dong, Ran and Chang, Qiong and Er, Meng Joo and Zhong, Junpei and Ikuno, Soichiro},
   journal={IEEE/ASME Transactions on Mechatronics}, 
   title={Motion Capture-Based Robotic Imitation: A Keyframeless Implementation Method Using Multivariate Empirical Mode Decomposition}, 
-  year={2024},
-  pages={1-12},
-  keywords={Biomechanics;deep learning;empirical mode decomposition (EMD);frequency control;motion measurement;robot motion},
+  year={2025},
+  volume={30},
+  number={3},
+  pages={1947-1958},
+  keywords={Robots;Motion capture;Motors;Frequency-domain analysis;Robot motion;Legged locomotion;Humanoid robots;Biomechanics;deep learning;empirical mode decomposition (EMD);frequency control;motion measurement;robot motion},
   doi={10.1109/TMECH.2024.3440642}}
 ```
 
